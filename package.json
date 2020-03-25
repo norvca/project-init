@@ -6,8 +6,9 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js",
-    "lint": "eslint --fix app/assets",
-    "prettier": "prettier --write '**/*.+(js|json|yml|css|scss|ts|md|)'"
+    "eslint": "eslint --fix app/assets",
+    "prettier": "prettier --write '**/*.+(js|json|yml|css|scss|ts|md|)'",
+    "lint": "npm run eslint && npm run prettier"
   },
   "keywords": [],
   "author": "",
