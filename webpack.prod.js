@@ -30,7 +30,7 @@ module.exports = merge(common, {
     new MiniCssExtractPlugin({filename: '[name].[contenthash].css'}),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './app/assets/template.html',
+      template: './app/assets/index.html',
       favicon: './app/assets/img/favicon.ico',
       minify: {
         removeComments: true,
