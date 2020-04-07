@@ -22,7 +22,22 @@ module.exports = merge(common, {
       },
       {
         test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: () => [
+                require('postcss-preset-env')({
+                  browsers: ['last 2 versions', '>.5%'],
+                }),
+              ],
+            },
+          },
+          'sass-loader',
+        ],
       },
     ],
   },
